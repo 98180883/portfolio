@@ -2,9 +2,7 @@
 
 A responsive personal portfolio website built using **HTML, CSS, and JavaScript** to showcase my projects, skills, and learning journey as a Computer Science student and aspiring **Full Stack Developer**.
 
-🔗 Live Demo:
-📂 Source Code:
-
+🔗 Live Demo : https://98180883.github.io/portfolio/
 ---
 
 ## ✨ Features
