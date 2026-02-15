@@ -1,16 +1,20 @@
 /*go to site */ 
 
+const siteBtn1 = document.getElementById("btn_pro1");
 const siteBtn2= document.getElementById("btn_pro2");
 const siteBtn3= document.getElementById("btn_pro3");
 const siteBtn4= document.getElementById("btn_pro4");
+const sliderAuto = document.querySelector(".skills");
+const leftBtn = document.getElementById("L-slideBtn");
+const rightBtn = document.getElementById("R-slideBtn");
 
 function gotoSite(any){
-    window.open(`https://${any}.netlify.app` , "_blank");
+    window.open(`${any}` , "_blank");
 }
-
-siteBtn2.addEventListener("click" , () => gotoSite("calculate-simple"));
-siteBtn3.addEventListener("click" , () => gotoSite("accurate-weather-aqi"));
-siteBtn4.addEventListener("click" , () => gotoSite("enggdigital"));
+siteBtn1.addEventListener("click" , () => gotoSite("https://98180883.github.io/Secured-Password-generator/"));
+siteBtn2.addEventListener("click" , () => gotoSite("https://98180883.github.io/movie-search-app/"));
+siteBtn3.addEventListener("click" , () => gotoSite("https://accurate-weather-aqi.netlify.app/"));
+siteBtn4.addEventListener("click" , () => gotoSite("https://enggdigital.netlify.app/"));
 
 /*contact*/
 
@@ -46,29 +50,16 @@ if(contactPh.length!=10 || isNaN(contactPh)){
 /*menu mobile*/
 
 const menuBtn = document.getElementById("menu-btn");
-const nav = document.getElementById("nav");
+const nav = document.getElementById("mob-nav");
 
 menuBtn.addEventListener("click" , () => {
  
     nav.classList.toggle("open");
 })
 
+ //slide
+rightBtn.onclick = () =>
+ sliderAuto.scrollBy({ left:150, behavior: "smooth" });
 
-/*dark mode*/
-const savedTheme = localStorage.getItem("theme");
-
-if(savedTheme==="dark"){
-    document.body.classList.add("dark");
-}
-const toggleBtn =document.getElementById("theme-toggle");
-
-toggleBtn.addEventListener("click" , () =>{
-    document.body.classList.toggle("dark");
-// save on reload
-  if (document.body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-  } else {
-    localStorage.setItem("theme", "light");
-  }
-})
- 
+  leftBtn.onclick = () =>
+   sliderAuto.scrollBy({ left:-150, behavior: "smooth" });
