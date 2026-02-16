@@ -1,13 +1,21 @@
-/*go to site */ 
 
 const siteBtn1 = document.getElementById("btn_pro1");
 const siteBtn2= document.getElementById("btn_pro2");
 const siteBtn3= document.getElementById("btn_pro3");
 const siteBtn4= document.getElementById("btn_pro4");
+
 const sliderAuto = document.querySelector(".skills");
+
 const leftBtn = document.getElementById("L-slideBtn");
 const rightBtn = document.getElementById("R-slideBtn");
 
+//timeout function
+function timeout() {setTimeout(function(){
+submitMsg.innerText = ""
+}, 5000);
+}
+
+//open site function
 function gotoSite(any){
     window.open(`${any}` , "_blank");
 }
@@ -16,13 +24,11 @@ siteBtn2.addEventListener("click" , () => gotoSite("https://98180883.github.io/m
 siteBtn3.addEventListener("click" , () => gotoSite("https://accurate-weather-aqi.netlify.app/"));
 siteBtn4.addEventListener("click" , () => gotoSite("https://enggdigital.netlify.app/"));
 
-/*contact*/
-
-const sBtn =  document.getElementById("submit");
+/*contact form validation*/
 const submitMsg = document.getElementById("submit-msg");
 const contact_form =  document.querySelector(".contact-form");
 
-sBtn.addEventListener("click" , (e) => {
+contact_form.addEventListener("submit" , (e) => {
 e.preventDefault();
 submitMsg.innerText = "";
 
@@ -34,17 +40,22 @@ const query = document.getElementById("query").value.trim();
 if(contactName=="" || contactMail=="" || query==""){
     submitMsg.innerText = "Each field is required" ;
      submitMsg.style.color = "red";
+     timeout(); 
     return;
+
 }
 if(contactPh.length!=10 || isNaN(contactPh)){
     submitMsg.innerText = "Invalid phone number";
      submitMsg.style.color = "red";
+     timeout(); 
      return;
+
 }
 
     submitMsg.innerText="Query Sent Successfully";
         submitMsg.style.color = "green";
               contact_form.reset();
+               timeout();
 })
 
 /*menu mobile*/
